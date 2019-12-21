@@ -9,8 +9,7 @@ import AddForm from "./AddForm";
 import useItemState from "../hooks/useItemState";
 
 export default function WishListApp() {
-  const initialItems = [];
-  const { items, addItem, editItem, removeItem, toggleItem } = useItemState(initialItems);
+  const { items, addItem, editItem, removeItem, toggleItem } = useItemState([]);
 
   return (
     <Paper
@@ -22,15 +21,15 @@ export default function WishListApp() {
       }}
       elevation={0}
     >
-      <AppBar position='static' style={{ height: "64px", backgroundColor: "green" }}>
+      <AppBar position={"static"} style={{ height: "64px" }}>
         <Toolbar>
-          <Typography color='inherit'>CHRISTMAS WISH LIST</Typography>
+          <Typography color={"inherit"}>CHRISTMAS WISH LIST</Typography>
         </Toolbar>
       </AppBar>
       <Grid container justify={"center"} style={{ marginTop: "1rem" }}>
         <Grid item xs={11} md={8} lg={4}>
           <AddForm addItem={addItem} />
-          <ItemList items={items} removeItem={removeItem} toggleItem={toggleItem} editItem={editItem} />
+          <ItemList items={items} editItem={editItem} removeItem={removeItem} toggleItem={toggleItem} />
         </Grid>
       </Grid>
     </Paper>

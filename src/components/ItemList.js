@@ -5,6 +5,7 @@ import Divider from "@material-ui/core/Divider";
 import Item from "./Item";
 
 export default function ItemList({ items, removeItem, toggleItem, editItem }) {
+
   return (
     items.length !== 0 ? (
       <Paper>

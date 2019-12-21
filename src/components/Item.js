@@ -11,13 +11,14 @@ import EditForm from "./EditForm";
 
 export default function Item({ id, item, completed, removeItem, toggleItem, editItem }) {
   const [ isEditing, toggle ] = useToggleState();
+
   return (
     <ListItem style={{ height: "64px" }}>
       {isEditing ? (
         <EditForm editItem={editItem} id={id} item={item} toggleEditForm={toggle} />
       ) : (
         <>
-          <Checkbox tabIndex={-1} checked={completed} onClick={() => toggleItem(id)} />
+          <Checkbox checked={completed} onClick={() => toggleItem(id)} tabIndex={-1} />
           <ListItemText style={{ textDecoration: completed ? "line-through" : "none" }}>{item}</ListItemText>
           <ListItemSecondaryAction>
             <IconButton aria-label={"Edit"} onClick={() => toggle()}>

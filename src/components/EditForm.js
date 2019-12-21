@@ -15,7 +15,7 @@ export default function EditForm({ id, item, editItem, toggleEditForm }) {
       }}
       style={{ margin: "1rem", width: "50%" }}
     >
-      <TextField margin={"normal"} value={value} onChange={handleChange} fullWidth autoFocus />
+      <TextField value={value} onChange={handleChange} margin={"normal"} fullWidth autoFocus />
     </form>
   );
 }
